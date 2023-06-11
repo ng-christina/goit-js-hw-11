@@ -1,0 +1,79 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 25px;
+    width: 100vw;
+    position: fixed;
+   background-image: linear-gradient( rgba(178, 181, 237, 0.7), rgba(116, 122, 233, 0.7));
+}
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.search-form input {
+    width: 500px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    padding: 11px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+  }
+
+  .button{
+    width: 165px;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.5;
+    color: white;
+    background-color: blueviolet;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .button:hover, .button:focus {
+    background-color: violet;
+    color: black;
+   
+}
+.gallery {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        display: flex;
+        padding: 136px 16px;
+}
+
+.photo-card img {
+    display: block;
+    margin: 0 auto;
+    height: 250px;
+    width: 100%;
+  }
+.link-card {
+    flex-basis: calc((100% - 48px) / 4);
+  text-decoration: none;
+}
+.photo-card {
+    background-color:  white;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    border-radius: 0px 0px 4px 4px;
+}
+.info {
+    margin: 0px 20px;
+    color: #393939;
+    justify-content: space-between;
+    font-size: 12px;
+    display: flex;
+}
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
