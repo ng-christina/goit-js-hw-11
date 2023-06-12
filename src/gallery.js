@@ -1,9 +1,9 @@
-import { contGall } from './index';
+import { contGall } from './index.js';
 
 function galleryRender(photos) {
     const markup = photos
-    .map((
-        {
+    .map(
+      ( {
             webformatURL,
             largeImageURL,
             tags,
@@ -11,29 +11,31 @@ function galleryRender(photos) {
             views,
             comments,
             downloads,
-        }) =>{
+        }) => {
             return `<a class="link-card" href="${largeImageURL}">
             <div class="photo-card">
-            <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+            <img src='${webformatURL} 'alt='${tags}' loading="lazy" />
             <div class="info">
               <p class="info-item">
-                <b>Like</b>"${likes}"
+                <b>Like</b>${likes}
               </p>
               <p class="info-item">
-                <b>Views</b>"${views}"
+                <b>Views</b>${views}
               </p>
               <p class="info-item">
-                <b>Comments</b>"${comments}"
+                <b>Comments</b>${comments}
               </p>
               <p class="info-item">
-                <b>Downloads</b>"${downloads}"
+                <b>Downloads</b>${downloads}
               </p>
             </div>
-          </div>`
-        }
+          </div>
+       </a>`;
+
+    }
     )
     .join('');
     contGall.insertAdjacentHTML('beforeend', markup);
-};
+}
 
 export { galleryRender };

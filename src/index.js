@@ -35,7 +35,6 @@ const observer = new IntersectionObserver(
     try {
       const data = await fetchImages(query, page);
   
-      //якщо користувач ввів абракадабру (немає картинок з таким запитом)
       if (!data.totalHits) {
         Notiflix.Notify.failure(
           `Sorry, there are no images matching your search query. Please try again.`
@@ -46,12 +45,10 @@ const observer = new IntersectionObserver(
       const photos = data.hits;
       galleryRender(photos);
   
-      //на першій сторінці
       if (pageFetch === 1) {
         Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`);
       }
   
-      //завершення колекції
       const totalPagesPerSubmit = Math.ceil(data.totalHits / 40);
   
       if (pageFetch === totalPagesPerSubmit) {
@@ -65,7 +62,6 @@ const observer = new IntersectionObserver(
       pageFetch += 1;
       observer.observe(guard);
   
-      //викликаємо метод refresh бібліотеки simplelightbox після оновлення DOM
       gallery.refresh();
     } catch (error) {
       console.log(error);
@@ -85,7 +81,7 @@ function handleSubmit(e) {
   
     queryFetch = inputValue;
     pageFetch = 1;
-    galleryRender.innerHTML = '';
+    contGall.innerHTML = '';
   
     //знимаємо старий observer при новому запиті
     observer.unobserve(guard);

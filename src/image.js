@@ -10,7 +10,7 @@ async function fetchImages(q, page) {
             params: {
                 key: API_KEY,
                 q,
-                image_type : 'foto',
+                image_type : 'photo',
                 orientation : 'horizontal',
                 safesearch : true,
                 page,
